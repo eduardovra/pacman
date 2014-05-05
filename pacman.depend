@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1399233203 source:/home/eduardo/workspace/pacman/main.cpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	"Sprite.h"
+
+1399257173 /home/eduardo/workspace/pacman/include/Sprite.h
+	<SFML/Graphics.hpp>
+
+1399257790 source:/home/eduardo/workspace/pacman/src/Sprite.cpp
+	<iostream>
+	"Sprite.h"
+

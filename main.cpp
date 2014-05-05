@@ -1,15 +1,14 @@
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
-int main()
+#include "Sprite.h"
+
+int main (int argc, char *argv[])
 {
     // Create the main window
     sf::RenderWindow App(sf::VideoMode(800, 600), "SFML window");
 
-    // Load a sprite to display
-    sf::Image Image;
-    if (!Image.LoadFromFile("cb.bmp"))
-        return EXIT_FAILURE;
-    sf::Sprite Sprite(Image);
+    Sprite s(10);
 
 	// Start the game loop
     while (App.IsOpened())
@@ -21,13 +20,25 @@ int main()
             // Close window : exit
             if (Event.Type == sf::Event::Closed)
                 App.Close();
+
+            if (Event.Type == sf::Event::KeyPressed)
+            {
+                 if (Event.Key.Code == sf::Key::Right)
+                    s.move(Sprite::RIGHT);
+                 else if (Event.Key.Code == sf::Key::Down)
+                    s.move(Sprite::DOWN);
+                 else if (Event.Key.Code == sf::Key::Left)
+                    s.move(Sprite::LEFT);
+                 else if (Event.Key.Code == sf::Key::Up)
+                    s.move(Sprite::UP);
+            }
         }
 
         // Clear screen
         App.Clear();
 
         // Draw the sprite
-        App.Draw(Sprite);
+        App.Draw(s.get_sprite());
 
         // Update the window
         App.Display();

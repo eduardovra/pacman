@@ -30,6 +30,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="include" />
 		</Compiler>
 		<Linker>
 			<Add library="sfml-audio" />
@@ -39,7 +40,9 @@
 			<Add library="sfml-window" />
 		</Linker>
 		<Unit filename="cb.bmp" />
+		<Unit filename="include/Sprite.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Sprite.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
